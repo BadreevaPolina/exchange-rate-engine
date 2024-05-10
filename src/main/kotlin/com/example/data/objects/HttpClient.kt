@@ -19,6 +19,8 @@ object HttpClient {
             header("Content-Type", "application/json")
             header("Origin", "https://www.bybit.com")
             header("Referer", "https://www.bybit.com/")
+            header("cache-control", "no-cache")
+            header("pragma", "no-cache")
         }
         install(ContentEncoding) {
             gzip()

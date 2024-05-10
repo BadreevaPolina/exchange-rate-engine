@@ -14,16 +14,16 @@ class CurrencyExchange {
         private val p2pService = BybitServiceImpl(client)
 
         suspend fun calculateExchangeRate(fromCurrency: Fiat, toCurrency: Fiat? = null) = coroutineScope {
-            val rateFromDeferred = async { getExchangeRate(fromCurrency, Side.BUY) }
-            val rateToDeferred = toCurrency?.let { async { getExchangeRate(it, Side.SELL) } }
+            val fromRateDeferred = async { getExchangeRate(fromCurrency, Side.BUY) }
+            val toRateDeferred = toCurrency?.let { async { getExchangeRate(it, Side.SELL) } }
 
-            val rateFrom = rateFromDeferred.await()
-            val rateTo = rateToDeferred?.await() ?: 1.0
+            val fromRate = fromRateDeferred.await()
+            val toRate = toRateDeferred?.await() ?: 1.0
 
-            if (rateFrom > 0 && rateTo > 0) {
-                println("${fromCurrency.name} -> ${toCurrency?.name ?: "USDT"}: $rateFrom -> $rateTo")
+            if (fromRate > 0 && toRate > 0) {
+                println("${fromCurrency.name} -> ${toCurrency?.name ?: "USDT"}: $fromRate -> $toRate")
             } else {
-                logError(fromCurrency, toCurrency, rateFrom, rateTo)
+                logError(fromCurrency, toCurrency, fromRate, toRate)
             }
         }
 
@@ -52,17 +52,17 @@ class CurrencyExchange {
             }
         }
 
-        private fun logError(fromCurrency: Fiat, toCurrency: Fiat?, rateFrom: Double, rateTo: Double) {
+        private fun logError(fromCurrency: Fiat, toCurrency: Fiat?, fromRate: Double, toRate: Double) {
             val errorCode = when {
-                rateFrom == -1.0 || rateTo == -1.0 -> ErrorCode.EXCHANGE_RATE_RETRIEVAL_FAILED
-                rateFrom == -2.0 || rateTo == -2.0 -> ErrorCode.CASH_ONLY_FIRST_PAGE
+                fromRate == -1.0 || toRate == -1.0 -> ErrorCode.EXCHANGE_RATE_RETRIEVAL_FAILED
+                fromRate == -2.0 || toRate == -2.0 -> ErrorCode.CASH_ONLY_FIRST_PAGE
                 else -> null
             }
 
             errorCode?.let { code ->
                 val failedCurrency = when {
-                    rateFrom < 0.0 && rateTo < 0.0 -> "${fromCurrency.name} and ${toCurrency?.name ?: ""}"
-                    rateFrom < 0.0 -> fromCurrency.name
+                    fromRate < 0.0 && toRate < 0.0 -> "${fromCurrency.name} and ${toCurrency?.name ?: ""}"
+                    fromRate < 0.0 -> fromCurrency.name
                     else -> toCurrency?.name ?: ""
                 }
                 LoggerConfig.logError(code, failedCurrency)

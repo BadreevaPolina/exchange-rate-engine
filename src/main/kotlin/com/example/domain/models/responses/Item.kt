@@ -1,0 +1,42 @@
+package com.example.domain.models.responses
+
+
+@kotlinx.serialization.Serializable
+data class Item(
+    val id: String,
+    val accountId: String,
+    val userId: String,
+    val nickName: String,
+    val tokenId: String,
+    val tokenName: String,
+    val currencyId: String,
+    val side: Int,
+    val priceType: Int,
+    val price: String,
+    val premium: String,
+    val lastQuantity: String,
+    val quantity: String,
+    val frozenQuantity: String,
+    val executedQuantity: String,
+    val minAmount: String,
+    val maxAmount: String,
+    val remark: String,
+    val status: Int,
+    val createDate: String,
+    val payments: List<String>,
+    val orderNum: Int,
+    val finishNum: Int,
+    val recentOrderNum: Int,
+    val recentExecuteRate: Int,
+    val fee: String,
+    val isOnline: Boolean,
+    val lastLogoutTime: String,
+    val blocked: String,
+    val makerContact: Boolean,
+    val symbolInfo: SymbolInfo?,
+    val tradingPreferenceSet: TradingPreferenceSet?,
+    val version: Int,
+    val authStatus: Int,
+    val recommend: Boolean,
+    val recommendTag: String
+)

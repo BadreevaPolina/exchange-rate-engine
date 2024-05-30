@@ -1,8 +1,8 @@
-
-val ktor_version: String by project
-val logback_version: String by project
-val koin_version: String by project
-val coroutines_version: String by project
+val ktorVersion: String by project
+val logbackVersion: String by project
+val koinVersion: String by project
+val coroutinesVersion: String by project
+val mockkVersion: String by project
 
 plugins {
     kotlin("jvm") version "1.9.24"
@@ -26,13 +26,16 @@ repositories {
 
 dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
-    implementation("ch.qos.logback:logback-classic:$logback_version")
-    implementation("io.insert-koin:koin-core:$koin_version")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version")
-    implementation("io.ktor:ktor-client-core:$ktor_version")
-    implementation("io.ktor:ktor-client-serialization:$ktor_version")
-    implementation("io.ktor:ktor-client-cio:$ktor_version")
-    implementation("io.ktor:ktor-client-logging:$ktor_version")
-    implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
-    implementation("io.ktor:ktor-client-encoding:$ktor_version")
+    implementation("ch.qos.logback:logback-classic:$logbackVersion")
+    implementation("io.insert-koin:koin-core:$koinVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+    implementation("io.ktor:ktor-client-core:$ktorVersion")
+    implementation("io.ktor:ktor-client-serialization:$ktorVersion")
+    implementation("io.ktor:ktor-client-cio:$ktorVersion")
+    implementation("io.ktor:ktor-client-logging:$ktorVersion")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+    implementation("io.ktor:ktor-client-encoding:$ktorVersion")
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation("io.ktor:ktor-client-mock:$ktorVersion")
+    testImplementation("io.insert-koin:koin-test:$koinVersion")
 }

@@ -1,0 +1,103 @@
+{
+  "ret_code": 0,
+  "ret_msg": "SUCCESS",
+  "result": {
+    "count": 91,
+    "items": [
+      {
+        "id": "1681571607301431296",
+        "accountId": "53568973",
+        "userId": "53568972",
+        "nickName": "SNAKE_EXCHANGER",
+        "tokenId": "USDT",
+        "tokenName": "",
+        "currencyId": "IDR",
+        "side": 1,
+        "priceType": 0,
+        "price": "16058",
+        "premium": "0",
+        "lastQuantity": "257.0556",
+        "quantity": "10150.0033",
+        "frozenQuantity": "0",
+        "executedQuantity": "9892.9477",
+        "minAmount": "2000000",
+        "maxAmount": "4127798",
+        "remark": "MORE INFORMATION : 0838-6714-9607 ( RONALD - SNAKE )",
+        "status": 10,
+        "createDate": "1689752888000",
+        "payments": [
+          "90"
+        ],
+        "orderNum": 1997,
+        "finishNum": 1992,
+        "recentOrderNum": 502,
+        "recentExecuteRate": 98,
+        "fee": "",
+        "isOnline": true,
+        "lastLogoutTime": "1716651062",
+        "blocked": "N",
+        "makerContact": true,
+        "symbolInfo": {
+          "id": "10",
+          "exchangeId": "301",
+          "orgId": "9001",
+          "tokenId": "USDT",
+          "currencyId": "IDR",
+          "status": 1,
+          "lowerLimitAlarm": 80,
+          "upperLimitAlarm": 120,
+          "itemDownRange": "80",
+          "itemUpRange": "120",
+          "currencyMinQuote": "15000",
+          "currencyMaxQuote": "756000000",
+          "currencyLowerMaxQuote": "280000",
+          "tokenMinQuote": "1",
+          "tokenMaxQuote": "50000",
+          "kycCurrencyLimit": "0",
+          "itemSideLimit": 3,
+          "buyFeeRate": "0",
+          "sellFeeRate": "0",
+          "orderAutoCancelMinute": 15,
+          "orderFinishMinute": 10,
+          "tradeSide": 9,
+          "currency": {
+            "id": "10",
+            "exchangeId": "0",
+            "orgId": "9001",
+            "currencyId": "IDR",
+            "scale": 0
+          },
+          "token": {
+            "id": "1",
+            "exchangeId": "0",
+            "orgId": "9001",
+            "tokenId": "USDT",
+            "scale": 4,
+            "sequence": 1
+          }
+        },
+        "tradingPreferenceSet": {
+          "hasUnPostAd": 0,
+          "isKyc": 1,
+          "isEmail": 0,
+          "isMobile": 0,
+          "hasRegisterTime": 0,
+          "registerTimeThreshold": 0,
+          "orderFinishNumberDay30": 5,
+          "completeRateDay30": "",
+          "nationalLimit": "",
+          "hasOrderFinishNumberDay30": 1,
+          "hasCompleteRateDay30": 0,
+          "hasNationalLimit": 0
+        },
+        "version": 0,
+        "authStatus": 1,
+        "recommend": false,
+        "recommendTag": ""
+      }
+    ]
+  },
+  "ext_code": "",
+  "ext_info": "None",
+  "time_now": "1716733862.569116"
+}

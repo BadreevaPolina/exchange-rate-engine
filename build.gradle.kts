@@ -38,4 +38,5 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("io.ktor:ktor-client-mock:$ktorVersion")
     testImplementation("io.insert-koin:koin-test:$koinVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }

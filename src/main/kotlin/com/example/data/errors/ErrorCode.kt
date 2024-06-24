@@ -1,4 +1,4 @@
-package com.example.utils
+package com.example.data.errors
 
 enum class ErrorCode(val message: String) {
     CLIENT_ERROR("Client error occurred with status:"),

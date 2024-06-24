@@ -5,7 +5,7 @@ data class ResultExchange(
     val toCurrency: String,
     val fromCurrencyPrice: Double,
     val toCurrencyPrice: Double,
-    val amount: Double? = null,
-    val count: Int? = null,
-    val rest: Double? = null
+    var toCurrencyAmount: Double? = null,
+    var count: Int? = null,
+    var rest: Double? = null
 )
